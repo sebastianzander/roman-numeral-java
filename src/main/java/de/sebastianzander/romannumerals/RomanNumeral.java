@@ -124,13 +124,13 @@ public final class RomanNumeral
     @Override
     public boolean equals(Object other)
     {
-        if(!(other instanceof RomanNumeral romanNumeralString))
+        if(!(other instanceof RomanNumeral romanNumeral))
             return false;
 
         if(other == this)
             return true;
 
-        return m_arabicDecimal == romanNumeralString.m_arabicDecimal;
+        return m_arabicDecimal == romanNumeral.m_arabicDecimal;
     }
 
     @Override
@@ -279,7 +279,7 @@ public final class RomanNumeral
      * RomanNumeral.
      * @param minuend The left-hand operand
      * @param subtrahend The right-hand operand
-     * @return The sum as a RomanNumeral
+     * @return The difference as a RomanNumeral
      */
     public static RomanNumeral difference(final RomanNumeral minuend, final RomanNumeral subtrahend)
         throws IllegalArgumentException
@@ -289,11 +289,11 @@ public final class RomanNumeral
     }
 
     /**
-     * Subtracts multiple RomanNumerals <code>subtrahend</code> from <code>minuend</code> and returns the difference as
-     * a RomanNumeral.
+     * Subtracts multiple RomanNumerals <code>subtrahends</code> from <code>minuend</code> and returns the difference
+     * as a RomanNumeral.
      * @param minuend The left-hand operand and as such the base of multiple subtraction
      * @param subtrahends An Iterable of RomanNumeral objects to subtract from <code>minuend</code>
-     * @return The sum as a RomanNumeral
+     * @return The difference as a RomanNumeral
      */
     public static RomanNumeral difference(final RomanNumeral minuend, final Iterable<RomanNumeral> subtrahends)
         throws IllegalArgumentException

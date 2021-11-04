@@ -284,8 +284,8 @@ public final class RomanNumeral
     public static RomanNumeral difference(final RomanNumeral minuend, final RomanNumeral subtrahend)
         throws IllegalArgumentException
     {
-        int sum = minuend.m_arabicDecimal + subtrahend.m_arabicDecimal;
-        return new RomanNumeral(sum);
+        int difference = minuend.m_arabicDecimal - subtrahend.m_arabicDecimal;
+        return new RomanNumeral(difference);
     }
 
     /**

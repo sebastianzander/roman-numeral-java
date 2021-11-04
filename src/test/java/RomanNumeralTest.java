@@ -264,6 +264,14 @@ public class RomanNumeralTest
         assertEquals(1, a.add(-2).arabicDecimal());
     }
 
+    @Test
+    public void sum3And2ShouldReturn5()
+    {
+        RomanNumeral a = new RomanNumeral(3);
+        RomanNumeral b = new RomanNumeral(5);
+        assertEquals(8, RomanNumeral.sum(a, b).arabicDecimal());
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void decimal1AddNegative2ShouldThrowIllegalArgumentException()
     {
@@ -292,6 +300,14 @@ public class RomanNumeralTest
         RomanNumeral a = new RomanNumeral(4);
         RomanNumeral b = new RomanNumeral(1);
         assertEquals(3, a.subtract(b).arabicDecimal());
+    }
+
+    @Test
+    public void differenceDecimal4And1ShouldReturn3()
+    {
+        RomanNumeral a = new RomanNumeral(4);
+        RomanNumeral b = new RomanNumeral(1);
+        assertEquals(3, RomanNumeral.difference(a, b).arabicDecimal());
     }
 
     @Test(expected = IllegalArgumentException.class)

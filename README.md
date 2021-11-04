@@ -12,7 +12,7 @@ import de.sebastianzander.romannumerals.RomanNumeral;
 
 public class Application
 {
-    public void main(String[] args) throws Exception
+    public void main(String[] args)
     {
         // construct from either a Roman numeral string or an Arabic decimal integer
         RomanNumeral a = new RomanNumeral(1987);
@@ -26,15 +26,14 @@ public class Application
         RomanNumeral t = RomanNumeral.sum(Arrays.asList(a, b, c));
 
         System.out.printf("%s + %s = %s\n", a, b, s);
-        System.out.printf("%d + %d = %d\n", a.getArabicDecimal(), b.getArabicDecimal(),
-            s.getArabicDecimal());
+        System.out.printf("%d + %d = %d\n", a.arabicDecimal(), b.arabicDecimal(), s.arabicDecimal());
     }
 }
 ```
 
 The above example should create the following output:
 
-````
+```
 MCMLXXXVII + XXXIV = MMXXI
 1987 + 34 = 2021
-````
+```

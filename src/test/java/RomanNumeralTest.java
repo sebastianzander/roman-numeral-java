@@ -89,6 +89,10 @@ public class RomanNumeralTest
         RomanNumeral a = new RomanNumeral("IV");
         RomanNumeral b = new RomanNumeral("IIII");
         assertTrue(a.equals(b));
+
+        RomanNumeral c = new RomanNumeral("CI");
+        RomanNumeral d = new RomanNumeral("IC");
+        assertTrue(c.equals(d));
     }
 
     @Test
@@ -265,11 +269,11 @@ public class RomanNumeralTest
     }
 
     @Test
-    public void sum3And2ShouldReturn5()
+    public void sum3And5ShouldReturnRomanVIII()
     {
         RomanNumeral a = new RomanNumeral(3);
         RomanNumeral b = new RomanNumeral(5);
-        assertEquals(8, RomanNumeral.sum(a, b).arabicDecimal());
+        assertEquals("VIII", RomanNumeral.sum(a, b).romanNumeral());
     }
 
     @Test(expected = IllegalArgumentException.class)

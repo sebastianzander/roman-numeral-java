@@ -124,13 +124,12 @@ public final class RomanNumeral
     @Override
     public boolean equals(Object other)
     {
-        if(other == null || !(other instanceof RomanNumeral))
+        if(!(other instanceof RomanNumeral romanNumeralString))
             return false;
 
         if(other == this)
             return true;
 
-        RomanNumeral romanNumeralString = (RomanNumeral)other;
         return m_arabicDecimal == romanNumeralString.m_arabicDecimal;
     }
 
@@ -215,6 +214,7 @@ public final class RomanNumeral
      * @return The sum as a RomanNumeral
      */
     public static RomanNumeral sum(final RomanNumeral augend, final RomanNumeral addend)
+        throws IllegalArgumentException
     {
         int sum = augend.m_arabicDecimal + addend.m_arabicDecimal;
         return new RomanNumeral(sum);
@@ -226,6 +226,7 @@ public final class RomanNumeral
      * @return The sum as a RomanNumeral
      */
     public static RomanNumeral sum(final Iterable<RomanNumeral> addends)
+        throws IllegalArgumentException
     {
         int sum = 0;
         for(RomanNumeral addend : addends)
@@ -281,6 +282,7 @@ public final class RomanNumeral
      * @return The sum as a RomanNumeral
      */
     public static RomanNumeral difference(final RomanNumeral minuend, final RomanNumeral subtrahend)
+        throws IllegalArgumentException
     {
         int sum = minuend.m_arabicDecimal + subtrahend.m_arabicDecimal;
         return new RomanNumeral(sum);
@@ -294,6 +296,7 @@ public final class RomanNumeral
      * @return The sum as a RomanNumeral
      */
     public static RomanNumeral difference(final RomanNumeral minuend, final Iterable<RomanNumeral> subtrahends)
+        throws IllegalArgumentException
     {
         int difference = minuend.m_arabicDecimal;
         for(RomanNumeral subtrahend : subtrahends)
